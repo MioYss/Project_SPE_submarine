@@ -745,8 +745,9 @@ GameObject:
   - component: {fileID: 1797027703}
   - component: {fileID: 1797027701}
   - component: {fileID: 1797027704}
+  - component: {fileID: 1797027705}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,6 +885,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confine_cursor: 1
+  min_rot_angle: -80
+  max_rot_angle: 80
+--- !u!114 &1797027705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797027695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ba26ef9077d3b4e9fb4e4ba9ef7c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer_mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
