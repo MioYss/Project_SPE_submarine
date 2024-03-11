@@ -6,6 +6,6 @@ public class Interact_Door : Interactable
 {
     public override void Interact()
     {
-        transform.eulerAngles = -Vector3.forward*90;
+        transform.Rotate(0, 0, 90f);
     }
 }

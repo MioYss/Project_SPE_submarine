@@ -22,7 +22,7 @@ public class Look : MonoBehaviour
         ray = new Ray(character_manager.Camera_transform.position,character_manager.Camera_transform.forward);
     }
 
-    private void FixedUpdate(){
+    private void Update(){
         if(Physics.Raycast(character_manager.Camera_transform.position, character_manager.Camera_transform.forward, out var hit, Ray_distance, layer_mask)){
             // executer le code
             Debug.DrawLine(hit.point, hit.point + hit.normal.normalized, Color.red);
@@ -36,7 +36,7 @@ public class Look : MonoBehaviour
 
     public void OnRaycast()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             interact.Interact();
         }
