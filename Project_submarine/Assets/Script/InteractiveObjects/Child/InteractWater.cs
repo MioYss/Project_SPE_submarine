@@ -9,7 +9,7 @@ public class InteractWater : Interactable
 
     private void Start()
     {
-        StartCoroutine(Water_up());
+        StartCoroutine(Water_Up());
     }
 
     public override void Interact()
@@ -20,21 +20,24 @@ public class InteractWater : Interactable
         }
         else
         {
-            water.transform.position -= new Vector3(0, 0.1f, 0);
-            level_water--;
-            level_water = Mathf.Clamp(level_water, 0, 6);
-            Debug.Log(level_water);
+            StartCoroutine(Water_Down());
         }
     }
-    private IEnumerator Water_up()
+    private IEnumerator Water_Up()
     {
         while (true) 
         {
             level_water = Mathf.Clamp(level_water, 0, 6);
             if (level_water <= 5)
             {
+                var newpos = water.transform.position + new Vector3(0, 0.1f, 0);
+                while ((newpos - water.transform.position).magnitude > 0.01f)
+                {
+                    water.transform.position = Vector3.Slerp(water.transform.position, newpos, 0.01f);
+                    yield return new WaitForEndOfFrame();
+                }
+                water.transform.position = newpos;
 
-                water.transform.position += new Vector3(0, 0.1f, 0);
                 level_water++;
                 Debug.Log(level_water);
             }
@@ -47,5 +50,20 @@ public class InteractWater : Interactable
             yield return new WaitForSecondsRealtime(2);
         }
 
+    }
+
+    private IEnumerator Water_Down()
+    {
+        var newpos = water.transform.position + new Vector3(0, -0.1f, 0);
+        while ((newpos - water.transform.position).magnitude > 0.01f)
+        {
+            water.transform.position = Vector3.Slerp(water.transform.position, newpos, 0.01f);
+            yield return new WaitForEndOfFrame();
+        }
+        water.transform.position = newpos;
+        level_water--;
+        level_water = Mathf.Clamp(level_water, 0, 6);
+        Debug.Log(level_water);
+        yield return new WaitForEndOfFrame();
     }
 }

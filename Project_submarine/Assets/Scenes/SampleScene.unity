@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 1677963723}
   - component: {fileID: 1677963722}
   - component: {fileID: 1677963721}
-  - component: {fileID: 1677963720}
+  - component: {fileID: 1677963725}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -1215,18 +1215,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1677963720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677963719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea93b4ba0003bea40b9c58b6c801973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1677963721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1313,6 +1301,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677963725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677963719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea93b4ba0003bea40b9c58b6c801973d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762924772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   layer_mask:
     serializedVersion: 2
     m_Bits: 64
-  Ray_distance: 10
+  ray_distance: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

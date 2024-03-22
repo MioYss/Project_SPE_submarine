@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interact_Door : Interactable
+public class InteractTube : Interactable
 {
     public override void Interact()
     {
