@@ -7,6 +7,7 @@ public abstract class PuzzleTemplate : MonoBehaviour
     public string puzzle_Index;
 
     public bool puzzle_Done = false;
+    public bool puzzle_Done_One_Time = false; 
 
     void Start()
     {

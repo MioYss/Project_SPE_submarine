@@ -12,8 +12,9 @@ public class Puzzle1 : PuzzleTemplate
     // Update is called once per frame
     void Update()
     {
-        if (puzzle_Done)
+        if (puzzle_Done && puzzle_Done_One_Time == false)
         {
+            puzzle_Done_One_Time = true;
             Set_Puzzle_Done();
         }
     }
