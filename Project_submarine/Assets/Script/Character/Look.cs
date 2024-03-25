@@ -19,7 +19,6 @@ public class Look : MonoBehaviour
     private void Start()
     {
         character_manager = GetComponent<CharacterManager>();
-        ray = new Ray(character_manager.Camera_transform.position,character_manager.Camera_transform.forward);
     }
 
     private void Update(){

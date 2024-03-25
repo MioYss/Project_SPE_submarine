@@ -6,5 +6,6 @@ public class CharacterManager : MonoBehaviour
 {
     [SerializeField] private Transform camera_transform;
 
+    public Grab grabManager;
     public Transform Camera_transform { get => camera_transform; private set => camera_transform = value; }
 }
