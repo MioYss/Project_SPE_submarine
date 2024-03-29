@@ -30,7 +30,7 @@ public class Pickable : Interactable
     {
         transform.SetParent(null);
         Rb.isKinematic = false;
-        Rb.AddForce(transform.forward * 2, ForceMode.VelocityChange);
+        Rb.AddForce(transform.forward * 0, ForceMode.VelocityChange);
     }
 
     private void Awake()
