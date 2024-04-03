@@ -8,7 +8,7 @@ public class Puzzle1 : PuzzleTemplate
     //Variables : 
     [SerializeField]
     private bool[] array_Right_Answer;
-    private List<bool> list_Proposition;
+    [SerializeField] private List<bool> list_Proposition;
     private List<TextMeshProUGUI> liste_Button_Text;
 
 
@@ -20,7 +20,7 @@ public class Puzzle1 : PuzzleTemplate
         {
             list_Proposition.Add(false);
         }
-        
+
     }
 
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction

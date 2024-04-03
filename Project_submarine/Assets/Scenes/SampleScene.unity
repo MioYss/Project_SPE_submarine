@@ -265,6 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295934026}
+  - component: {fileID: 295934027}
   m_Layer: 0
   m_Name: Puzzle2
   m_TagString: Untagged
@@ -288,6 +289,26 @@ Transform:
   - {fileID: 1281247697}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &295934027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295934025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df16d4c8275588245b2ed5cc1653ea31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle_Index: 
+  puzzle_Done: 0
+  array_Position_X: []
+  index_Position: 0
+  right_Answer: 
+  other_Answer_1: 
+  proposition_Player: 000000000000000000000000000000000000000000000000
+  validity: 
 --- !u!1 &409335197
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +943,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzle_Index: 
   puzzle_Done: 0
-  array_Right_Answer: 0000000000
+  array_Right_Answer: 
+  list_Proposition: 
 --- !u!4 &733600467
 Transform:
   m_ObjectHideFlags: 0

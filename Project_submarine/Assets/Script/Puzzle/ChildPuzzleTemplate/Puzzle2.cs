@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Puzzle2 : PuzzleTemplate
 {
-    [SerializeField]
-    private int[] array_Right_Answer;
-
+    //variables pour le déplacement du curseur
     [SerializeField] private float[] array_Position_X;
     [SerializeField] private int index_Position;
 
-    private List<int> right_Answer;
-    private List<int> other_Answer_1;
+    //Array de codes préfinis
+    public List<int> right_Answer;
+    public List<int> other_Answer_1;
 
-    private List<int> proposition_Player;
-    private List<bool> validity;
+    public List<int> proposition_Player;
+    public List<bool> validity;
 
     void Start()
     {
@@ -31,6 +30,15 @@ public class Puzzle2 : PuzzleTemplate
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Incremente_Decremente(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Moove_Cursor(true);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Moove_Cursor(false);
         }
     }
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction
@@ -63,11 +71,11 @@ public class Puzzle2 : PuzzleTemplate
     {
         if(bobole == true)      //Si bobole est égale à true : on incrémente le int a l'index actuel
         {
-            if(proposition_Player[index_Position] < 9)
+            if (proposition_Player[index_Position] < 9)
             {
                 proposition_Player[index_Position]++;
             }
-            proposition_Player[index_Position] = 0;
+            else { proposition_Player[index_Position] = 0; }
         }
 
         if (bobole == false)      //Si bobole est égale à false : on décrémente le int a l'index actuel
@@ -76,7 +84,28 @@ public class Puzzle2 : PuzzleTemplate
             {
                 proposition_Player[index_Position]--;
             }
-            proposition_Player[index_Position] = 9;
+            else { proposition_Player[index_Position] = 9; }
+        }
+    }
+
+    private void Moove_Cursor(bool bobole)
+    {
+        if(bobole == true)      //Si bobole est égale à true : on déplace le curseur à droite
+        {
+            if(index_Position < 5)
+            {
+                index_Position++;
+            }
+            else { index_Position = 0; }
+        }
+
+        if(bobole == false)      //Si bobole est égale à false : on déplace le curseur à gauche
+        {
+            if(index_Position > 0)
+            {
+                index_Position--;
+            }
+            else { index_Position = 5; }
         }
     }
 
