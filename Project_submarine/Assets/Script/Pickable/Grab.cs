@@ -9,6 +9,8 @@ public class Grab : MonoBehaviour
     // Reference to the currently held item.
     private Pickable pickedItem;
 
+    public Rotation_Pick rotation_pick;
+
     public void SetPickable( Pickable newPïckable)
     {
         pickedItem = newPïckable;
@@ -23,6 +25,7 @@ public class Grab : MonoBehaviour
                 DropItem();
             }
         }
+
     }
     private void DropItem()
     {

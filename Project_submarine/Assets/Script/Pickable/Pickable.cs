@@ -13,8 +13,8 @@ public class Pickable : Interactable
         
         // Disable rigidbody and reset velocities
         Rb.isKinematic = true;
-        Rb.velocity = Vector3.zero;
-        Rb.angularVelocity = Vector3.zero;
+        //Rb.velocity = Vector3.zero;
+        //Rb.angularVelocity = Vector3.zero;
         
         // Set Slot as a parent
         transform.SetParent(character_manager.grabManager.slot);
@@ -28,14 +28,20 @@ public class Pickable : Interactable
 
     public void Drop()
     {
+
         transform.SetParent(null);
         Rb.isKinematic = false;
         Rb.AddForce(transform.forward * 0, ForceMode.VelocityChange);
+        Debug.Log("je passe par le drop");
     }
 
     private void Awake()
     {
 
         rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        //Debug.Log(Rb.velocity);
     }
 }

@@ -18,11 +18,6 @@ public class Rotation_Pick : MonoBehaviour
 
     private void Update()
     {
-       /* if (Input.GetKey(KeyCode.A))
-        {
-            ResetRot();
-        } */
-
         if (Input.GetMouseButton(1)) Pitch();
         else Roll();
     }
@@ -43,8 +38,4 @@ public class Rotation_Pick : MonoBehaviour
         transform.localRotation = Quaternion.Euler(lateral_rotation_object);
     }
 
-    private void ResetRot()
-    {
-        transform.localRotation = Quaternion.Euler(1, 1, 1);
-    }
 }
