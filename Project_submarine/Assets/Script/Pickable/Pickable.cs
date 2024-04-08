@@ -8,13 +8,12 @@ public class Pickable : Interactable
     private Rigidbody rb;
     public Rigidbody Rb => rb;
 
+
     public override void Interact()
     {
         
         // Disable rigidbody and reset velocities
         Rb.isKinematic = true;
-        //Rb.velocity = Vector3.zero;
-        //Rb.angularVelocity = Vector3.zero;
         
         // Set Slot as a parent
         transform.SetParent(character_manager.grabManager.slot);
@@ -24,14 +23,16 @@ public class Pickable : Interactable
         transform.localEulerAngles = Vector3.zero;
 
         character_manager.grabManager.SetPickable (this);
+
+        GetComponent<Rotation_Pick>().enabled = true;
     }
 
     public void Drop()
     {
-
+        GetComponent<Rotation_Pick>().enabled = false;
+        //transform.rotation = Quaternion.identity;
         transform.SetParent(null);
         Rb.isKinematic = false;
-        Rb.AddForce(transform.forward * 0, ForceMode.VelocityChange);
         Debug.Log("je passe par le drop");
     }
 
@@ -39,9 +40,5 @@ public class Pickable : Interactable
     {
 
         rb = GetComponent<Rigidbody>();
-    }
-    private void Update()
-    {
-        //Debug.Log(Rb.velocity);
     }
 }
