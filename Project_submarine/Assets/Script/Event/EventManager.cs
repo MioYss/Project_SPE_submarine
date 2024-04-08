@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EventManager : Manager
 {
-    [SerializeField]
+    
     private Dictionary<string, bool> dictio_Puzzle_Done = new Dictionary<string, bool> {
             {"Puzzle_1", false},
             {"Puzzle_2", false}
@@ -14,7 +14,6 @@ public class EventManager : Manager
 
     [SerializeField]
     private bool event_1, event_2;
-
 
 
 
@@ -47,6 +46,7 @@ public class EventManager : Manager
     {
         dictio_Puzzle_Done[puzzle] = boolStatue;
         Debug.Log("Je confirme ! Mon dico a changé !");
+        Debug.Log(dictio_Puzzle_Done[puzzle]);
     }
 
 

@@ -9,12 +9,12 @@ public class Puzzle1 : PuzzleTemplate
     [SerializeField]
     private bool[] array_Right_Answer;
     [SerializeField] private List<bool> list_Proposition;
-    private List<TextMeshProUGUI> liste_Button_Text;
+    [SerializeField] private List<TextMeshProUGUI> liste_Button_Text;
 
 
     void Start()
     {
-        puzzle_Index = "puzzle_1";
+        puzzle_Index = "Puzzle_1";
 
         for (int i = 0; i < 5; i++)
         {

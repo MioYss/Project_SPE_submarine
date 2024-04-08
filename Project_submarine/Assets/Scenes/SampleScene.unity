@@ -305,10 +305,9 @@ MonoBehaviour:
   puzzle_Done: 0
   array_Position_X: []
   index_Position: 0
-  right_Answer: 
+  right_Answer: 010000000100000001000000010000000100000001000000
   other_Answer_1: 
   proposition_Player: 000000000000000000000000000000000000000000000000
-  validity: 
 --- !u!1 &409335197
 GameObject:
   m_ObjectHideFlags: 0

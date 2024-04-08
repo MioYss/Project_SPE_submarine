@@ -13,7 +13,6 @@ public class Puzzle2 : PuzzleTemplate
     public List<int> other_Answer_1;
 
     public List<int> proposition_Player;
-    public List<bool> validity;
 
     void Start()
     {
@@ -42,24 +41,23 @@ public class Puzzle2 : PuzzleTemplate
         }
     }
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction
-    //Manager_Manager.GetManager<EventManager>().Changement_Dictionnaire_Puzzle(puzzle_Index, puzzle_Done);
-
     public override void Set_Puzzle_Done()
     {
         Manager_Manager.GetManager<EventManager>().Changement_Dictionnaire_Puzzle(puzzle_Index, puzzle_Done);
     }
 
-    private bool Verification_List_Player(List<int> list_Verif, List<bool> list_Valid)
+    private bool Verification_List_Player(List<int> list_Verif)
     {
+        int var_Temporary = 0;
         for (int i = 0; i < 6; i++)
         {
             if(list_Verif[i] == proposition_Player[i])
             {
-                list_Valid[i] = true;
+                var_Temporary++;
             }
-            list_Valid[i] = false;
         }
-        if (list_Valid.TrueForAll(x => true))
+
+        if (var_Temporary == 6)
         {
             return true;
         }
@@ -86,6 +84,17 @@ public class Puzzle2 : PuzzleTemplate
             }
             else { proposition_Player[index_Position] = 9; }
         }
+
+        if(Verification_List_Player(right_Answer) == true)
+        {
+            puzzle_Done = true;
+            Set_Puzzle_Done();
+        }
+        if(Verification_List_Player(right_Answer) == false)
+        {
+            Debug.Log("Code pas bon");
+        }
+
     }
 
     private void Moove_Cursor(bool bobole)
