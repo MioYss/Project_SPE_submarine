@@ -9,6 +9,7 @@ public class EventManager : Manager
     
     private Dictionary<string, bool> dictio_Puzzle_Done = new Dictionary<string, bool> {
             {"Puzzle_1", false},
+            {"Puzzle_2", false},
             {"Puzzle_2", false}
         };
 
@@ -26,11 +27,17 @@ public class EventManager : Manager
 
     void Update()
     {
-        if (dictio_Puzzle_Done["Puzzle_1"] == true && dictio_Puzzle_Done["Puzzle_2"] == true && event_1 == false)
+        if (dictio_Puzzle_Done["Puzzle_1"] == true && event_1 == false)
         {
             Debug.Log("Alerte Coupure d'o² ");
             Lancement_Event_1();
             event_1 = true;
+        }
+        if (dictio_Puzzle_Done["Puzzle_2"] == true && dictio_Puzzle_Done["Puzzle_3"] == true && event_2 == false)
+        {
+            Debug.Log("Alerte innondations ");
+            Lancement_Event_2();
+            event_2 = true;
         }
     }
 
@@ -53,6 +60,10 @@ public class EventManager : Manager
     public void Lancement_Event_1()
     {
         Debug.Log("bouuuuh l'oxygène est cassé");
+    }
+    public void Lancement_Event_2()
+    {
+        Debug.Log("bouuuuh le sous marin s'innonde");
     }
 
 
