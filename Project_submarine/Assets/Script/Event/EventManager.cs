@@ -10,7 +10,9 @@ public class EventManager : Manager
     private Dictionary<string, bool> dictio_Puzzle_Done = new Dictionary<string, bool> {
             {"Puzzle_1", false},
             {"Puzzle_2", false},
-            {"Puzzle_2", false}
+            {"Puzzle_3", false},
+            {"Puzzle_4", false},
+            {"Puzzle_5", false}
         };
 
     [SerializeField]
