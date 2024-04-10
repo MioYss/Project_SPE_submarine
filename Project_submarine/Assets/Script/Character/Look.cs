@@ -12,31 +12,30 @@ public class Look : MonoBehaviour
 
     private Interactable interact;
 
-    public float Ray_distance;
+    public float ray_distance = 10;
 
     Ray ray;
 
     private void Start()
     {
         character_manager = GetComponent<CharacterManager>();
-        ray = new Ray(character_manager.Camera_transform.position,character_manager.Camera_transform.forward);
     }
 
-    private void FixedUpdate(){
-        if(Physics.Raycast(character_manager.Camera_transform.position, character_manager.Camera_transform.forward, out var hit, Ray_distance, layer_mask)){
+    private void Update(){
+        if(Physics.Raycast(character_manager.Camera_transform.position, character_manager.Camera_transform.forward, out var hit, ray_distance, layer_mask)){
             // executer le code
             Debug.DrawLine(hit.point, hit.point + hit.normal.normalized, Color.red);
             Debug.Log(hit.transform.name);
 
             interact = hit.transform.GetComponent<Interactable>();
 
-            OnRaycast();
+            On_Raycast();
         }
     }
 
-    public void OnRaycast()
+    public void On_Raycast()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             interact.Interact();
         }
