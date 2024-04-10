@@ -8,7 +8,8 @@ public class Pickable : Interactable
     private Rigidbody rb;
     public Rigidbody Rb => rb;
 
-
+    public Placement_1 placement_var;
+    public string feur = "feur";
     public override void Interact()
     {
         
@@ -25,6 +26,10 @@ public class Pickable : Interactable
         character_manager.grabManager.SetPickable (this);
 
         GetComponent<Rotation_Pick>().enabled = true;
+
+
+        //permet de récupérer le pickable object dans les scripts placements
+        placement_var.change_Current_Pickable(this);
     }
 
     public void Drop()
@@ -34,6 +39,9 @@ public class Pickable : Interactable
         transform.SetParent(null);
         Rb.isKinematic = false;
         Debug.Log("je passe par le drop");
+
+        //permet de le retirer des scripts placements
+        placement_var.null_Current_Pickable();
     }
 
     private void Awake()
