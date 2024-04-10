@@ -29,7 +29,7 @@ public class Pickable : Interactable
 
 
         //permet de récupérer le pickable object dans les scripts placements
-        placement_var.change_Current_Pickable(this);
+        placement_var.change_Current_Game_Object(this.gameObject);
     }
 
     public void Drop()
@@ -41,7 +41,7 @@ public class Pickable : Interactable
         Debug.Log("je passe par le drop");
 
         //permet de le retirer des scripts placements
-        placement_var.null_Current_Pickable();
+        placement_var.null_Current_Game_Object();
     }
 
     private void Awake()

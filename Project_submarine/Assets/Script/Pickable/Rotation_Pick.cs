@@ -10,6 +10,8 @@ public class Rotation_Pick : MonoBehaviour
     private Pickable pickable;
 
     private Vector3 lateral_rotation_object = Vector3.zero;
+
+    private List<float> list_Return;
     void Start()
     {
         pickable = GetComponent<Pickable>();
@@ -20,6 +22,7 @@ public class Rotation_Pick : MonoBehaviour
     {
         if (Input.GetMouseButton(1)) Pitch();
         else Roll();
+
     }
 
     private void Pitch()
@@ -38,4 +41,10 @@ public class Rotation_Pick : MonoBehaviour
         transform.localRotation = Quaternion.Euler(lateral_rotation_object);
     }
 
+    public List<float> Get_Rotation_Float()
+    {
+        list_Return.Add(Mathf.Clamp(lateral_rotation_object.x, min_rot_angle_object, max_rot_angle_object));
+        list_Return.Add(Mathf.Clamp(lateral_rotation_object.z, min_rot_angle_object, max_rot_angle_object));
+        return list_Return;
+}
 }
