@@ -17,7 +17,7 @@ public class Placement_1 : MonoBehaviour
 
 
     //Right answer :
-    private Pickable pickable_Right_Answer;
+    [SerializeField] private Pickable pickable_Right_Answer;
     private List<float> rotation_Right_Answer;      //élément [0] : rotation X; élément[1] : rotation y
 
     //Player answer :
@@ -31,8 +31,12 @@ public class Placement_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotation_Current = component_Rotation_Pick.Get_Rotation_Float();
-        Debug.Log("x : " + rotation_Current[0] + "z : " + rotation_Current[1]);
+        if(game_Object_Current != null)
+        {
+            rotation_Current = new List<float> (component_Rotation_Pick.Get_Rotation_Float());
+            Debug.Log("x : " + rotation_Current[0] + "z : " + rotation_Current[1]);
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.R) && is_In_Range == true && game_Object_Current != null)
         {
@@ -56,9 +60,22 @@ public class Placement_1 : MonoBehaviour
         }
     }
 
-
-
-
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Pieces")
+        {
+            Debug.Log("la piece touche placement");
+            is_In_Range = true;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Pieces")
+        {
+            Debug.Log("la piece touche plus placement");
+            is_In_Range = false;
+        }
+    }
 
     /*public void change_Current_Pickable(Pickable new_Pickable)
     {

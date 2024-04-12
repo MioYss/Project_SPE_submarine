@@ -511,6 +511,7 @@ MonoBehaviour:
   min_rot_angle_object: -90
   max_rot_angle_object: 90
   rotation_speed: 10
+  list_Return: []
 --- !u!1 &606863696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1849,7 @@ MonoBehaviour:
   player: {fileID: 1797027695}
   range_Max: 0
   is_In_Range: 0
+  pickable_Right_Answer: {fileID: 553260710}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

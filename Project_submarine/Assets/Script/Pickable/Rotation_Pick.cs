@@ -11,7 +11,7 @@ public class Rotation_Pick : MonoBehaviour
 
     private Vector3 lateral_rotation_object = Vector3.zero;
 
-    private List<float> list_Return;
+    [SerializeField] private List<float> list_Return;
     void Start()
     {
         pickable = GetComponent<Pickable>();
@@ -43,8 +43,11 @@ public class Rotation_Pick : MonoBehaviour
 
     public List<float> Get_Rotation_Float()
     {
-        list_Return.Add(Mathf.Clamp(lateral_rotation_object.x, min_rot_angle_object, max_rot_angle_object));
-        list_Return.Add(Mathf.Clamp(lateral_rotation_object.z, min_rot_angle_object, max_rot_angle_object));
+        list_Return.Clear();
+        list_Return.Add(lateral_rotation_object.x);
+        list_Return.Add(lateral_rotation_object.z);
+        //Debug.Log(list_Return[0]);
+        //Debug.Log(list_Return[1]);
         return list_Return;
 }
 }

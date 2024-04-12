@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Puzzle5 : PuzzleTemplate
 {
-    public List<>
+    //public List<>
 
     // Start is called before the first frame update
     void Start()
