@@ -9,7 +9,6 @@ public class Pickable : Interactable
     public Rigidbody Rb => rb;
 
     public Placement_1 placement_var;
-    public string feur = "feur";
     public override void Interact()
     {
         
