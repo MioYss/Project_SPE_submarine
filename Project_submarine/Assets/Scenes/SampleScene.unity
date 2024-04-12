@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 553260712}
   m_Layer: 6
   m_Name: Pickable_Object_01
-  m_TagString: Untagged
+  m_TagString: Pieces
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1823,8 +1823,8 @@ Transform:
   m_GameObject: {fileID: 2055745100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.926, y: 1.275, z: -11.27}
-  m_LocalScale: {x: 1, y: 1, z: 0.23954}
+  m_LocalPosition: {x: -15.8556, y: 0.795, z: -11.3196}
+  m_LocalScale: {x: 0.8592, y: 0.24114, z: 0.33870956}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1841,18 +1841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d9737a3c8f1464880ca4cc245800a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  object_1: {fileID: 0}
-  object_2: {fileID: 0}
-  object_3: {fileID: 0}
-  object_4: {fileID: 0}
-  object_5: {fileID: 0}
-  object_6: {fileID: 0}
   rotation_Current: []
   pickable_Current: {fileID: 0}
+  game_Object_Current: {fileID: 0}
+  component_Rotation_Pick: {fileID: 0}
   player: {fileID: 1797027695}
   range_Max: 0
   is_In_Range: 0
-  grab_Manager: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
