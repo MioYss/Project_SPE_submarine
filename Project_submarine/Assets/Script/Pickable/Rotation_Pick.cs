@@ -9,20 +9,24 @@ public class Rotation_Pick : MonoBehaviour
 
     private Pickable pickable;
 
+    public Grab grab_var;
+
     private Vector3 lateral_rotation_object = Vector3.zero;
 
     [SerializeField] private List<float> list_Return;
     void Start()
     {
-        pickable = GetComponent<Pickable>();
-
+        pickable = this.GetComponent<Pickable>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(1)) Pitch();
-        else Roll();
-
+        if(grab_var.is_Someone_In_Hand() == pickable )
+        {
+            if (Input.GetMouseButton(1)) Pitch();
+            else Roll();
+        }
+        
     }
 
     private void Pitch()

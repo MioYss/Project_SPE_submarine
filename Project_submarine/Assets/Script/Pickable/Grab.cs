@@ -32,4 +32,13 @@ public class Grab : MonoBehaviour
         pickedItem.Drop();
         pickedItem = null;
     }
+
+    public Pickable is_Someone_In_Hand()
+    {
+        if(pickedItem != null)
+        {
+            return pickedItem;
+        }
+        return pickedItem;
+    }
 }
