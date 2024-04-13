@@ -9,6 +9,11 @@ public class Puzzle5 : PuzzleTemplate
     public List<int> list_Right_Answer;
     public int compteur_Right;
 
+    //Variables code/symboles
+    public bool on_Console = false;
+    public List<int> proposition_Player_Numbers;
+    [SerializeField] private List<int> list_Right_Answer_Numbers;
+    private int index_Position;
 
 
     void Start()
@@ -18,7 +23,27 @@ public class Puzzle5 : PuzzleTemplate
 
     void Update()
     {
-        
+        if(on_Console == true)
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Incremente_Decremente(false);
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Incremente_Decremente(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Moove_Cursor(true);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Moove_Cursor(false);
+            }
+        }
+
     }
 
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction
@@ -49,5 +74,79 @@ public class Puzzle5 : PuzzleTemplate
         }
         return false;
     }
+
+    private bool Verification_List_Player()
+    {
+        int var_Temporary = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            if (list_Right_Answer_Numbers[i] == proposition_Player_Numbers[i])
+            {
+                var_Temporary++;
+            }
+        }
+
+        if (var_Temporary == 4)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+    private void Incremente_Decremente(bool bobole)
+    {
+        if (bobole == true)      //Si bobole est égale à true : on incrémente le int a l'index actuel
+        {
+            if (proposition_Player_Numbers[index_Position] < 9)
+            {
+                proposition_Player_Numbers[index_Position]++;
+            }
+            else { proposition_Player_Numbers[index_Position] = 0; }
+        }
+
+        if (bobole == false)      //Si bobole est égale à false : on décrémente le int a l'index actuel
+        {
+            if (proposition_Player_Numbers[index_Position] > 0)
+            {
+                proposition_Player_Numbers[index_Position]--;
+            }
+            else { proposition_Player_Numbers[index_Position] = 9; }
+        }
+
+        if (Verification_List_Player() == true)
+        {
+            puzzle_Done = true;
+            Set_Puzzle_Done();
+        }
+        if (Verification_List_Player() == false)
+        {
+            Debug.Log("Code pas bon");
+        }
+
+    }
+
+    private void Moove_Cursor(bool bobole)
+    {
+        if (bobole == true)      //Si bobole est égale à true : on déplace le curseur à droite
+        {
+            if (index_Position < 5)
+            {
+                index_Position++;
+            }
+            else { index_Position = 0; }
+        }
+
+        if (bobole == false)      //Si bobole est égale à false : on déplace le curseur à gauche
+        {
+            if (index_Position > 0)
+            {
+                index_Position--;
+            }
+            else { index_Position = 5; }
+        }
+    }
+
+
 
 }
