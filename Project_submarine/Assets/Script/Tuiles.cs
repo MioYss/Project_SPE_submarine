@@ -42,10 +42,11 @@ public class Tuiles : MonoBehaviour
 
     public void random_Rotate()
     {
+        Debug.Log("Je rotate");
         index_Rotation = UnityEngine.Random.Range(0, 4);
-        vector_Rotation.z = array_Rotation[index_Rotation];
+        vector_Rotation.z = array_Rotation[2];
         this.gameObject.transform.localRotation = Quaternion.Euler(vector_Rotation);
-        puzzle_5_Object.update_List_All_Tuiles(index_In_List, array_Rotation[index_Rotation]);
+        puzzle_5_Object.update_List_All_Tuiles(index_In_List, array_Rotation[2]);
     }
 }
 
