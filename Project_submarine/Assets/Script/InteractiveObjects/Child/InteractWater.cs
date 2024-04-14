@@ -39,7 +39,7 @@ public class InteractWater : Interactable
                 water.transform.position = newpos;
 
                 level_water++;
-                Debug.Log(level_water);
+                //Debug.Log(level_water);
             }
 
             if (level_water <= 0)
@@ -63,7 +63,7 @@ public class InteractWater : Interactable
         water.transform.position = newpos;
         level_water--;
         level_water = Mathf.Clamp(level_water, 0, 6);
-        Debug.Log(level_water);
+        //Debug.Log(level_water);
         yield return new WaitForEndOfFrame();
     }
 }
