@@ -5424,7 +5424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzle_Index: 
   puzzle_Done: 0
-  array_Right_Answer: 0100010001
+  array_Right_Answer: 0001010001
   list_Proposition: 
 --- !u!1 &1091072081
 GameObject:
