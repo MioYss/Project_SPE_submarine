@@ -8,7 +8,7 @@ public class Pickable : Interactable
     private Rigidbody rb;
     public Rigidbody Rb => rb;
 
-    public Placement_1 placement_var;
+    public Placement placement_var_1, placement_var_2, placement_var_3, placement_var_4, placement_var_5, placement_var_6;
     public override void Interact()
     {
         
@@ -28,7 +28,12 @@ public class Pickable : Interactable
 
 
         //permet de récupérer le pickable object dans les scripts placements
-        placement_var.change_Current_Game_Object(this.gameObject);
+        placement_var_1.change_Current_Game_Object(this.gameObject);
+        placement_var_2.change_Current_Game_Object(this.gameObject);
+        placement_var_3.change_Current_Game_Object(this.gameObject);
+        placement_var_4.change_Current_Game_Object(this.gameObject);
+        placement_var_5.change_Current_Game_Object(this.gameObject);
+        placement_var_6.change_Current_Game_Object(this.gameObject);
     }
 
     public void Drop()
@@ -40,7 +45,12 @@ public class Pickable : Interactable
         Debug.Log("je passe par le drop");
 
         //permet de le retirer des scripts placements
-        placement_var.null_Current_Game_Object();
+        placement_var_1.null_Current_Game_Object();
+        placement_var_2.null_Current_Game_Object();
+        placement_var_3.null_Current_Game_Object();
+        placement_var_4.null_Current_Game_Object();
+        placement_var_5.null_Current_Game_Object();
+        placement_var_6.null_Current_Game_Object();
     }
 
     private void Awake()

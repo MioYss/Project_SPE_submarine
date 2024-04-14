@@ -12,7 +12,7 @@ public class Puzzle3 : PuzzleTemplate
     {
         puzzle_Index = "Puzzle_3";
 
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 6; i++)
         {
             list_Placement_Player.Add(false);
         }
@@ -23,6 +23,7 @@ public class Puzzle3 : PuzzleTemplate
     {
         if (list_Placement_Player[0]== true && list_Placement_Player[1] == true && list_Placement_Player[2] == true && list_Placement_Player[3] == true && list_Placement_Player[4] == true && list_Placement_Player[5] == true)
         {
+            Debug.Log("puzzle 3 accomplie");
             puzzle_Done = true;
             Set_Puzzle_Done();
         }
