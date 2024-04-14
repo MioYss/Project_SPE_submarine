@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Puzzle2 : PuzzleTemplate
@@ -14,6 +15,11 @@ public class Puzzle2 : PuzzleTemplate
 
     public List<int> proposition_Player;
 
+    public InteractiveConsolePuzzle2 console;
+
+    //UI
+    public List<TextMeshProUGUI> list_text;
+    public TextMeshProUGUI index_UI;
     void Start()
     {
         puzzle_Index = "Puzzle_2";
@@ -22,24 +28,28 @@ public class Puzzle2 : PuzzleTemplate
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (console.on_Console == true)
         {
-            Incremente_Decremente(false);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Incremente_Decremente(true);
-        }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Incremente_Decremente(false);
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Incremente_Decremente(true);
+            }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Moove_Cursor(true);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Moove_Cursor(false);
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Moove_Cursor(true);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Moove_Cursor(false);
+            }
         }
     }
+
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction
     public override void Set_Puzzle_Done()
     {
@@ -72,8 +82,9 @@ public class Puzzle2 : PuzzleTemplate
             if (proposition_Player[index_Position] < 9)
             {
                 proposition_Player[index_Position]++;
+                list_text[index_Position].text = proposition_Player[index_Position].ToString() ;
             }
-            else { proposition_Player[index_Position] = 0; }
+            else { proposition_Player[index_Position] = 0; list_text[index_Position].text = proposition_Player[index_Position].ToString(); }
         }
 
         if (bobole == false)      //Si bobole est égale à false : on décrémente le int a l'index actuel
@@ -81,8 +92,9 @@ public class Puzzle2 : PuzzleTemplate
             if (proposition_Player[index_Position] > 0)
             {
                 proposition_Player[index_Position]--;
+                list_text[index_Position].text = proposition_Player[index_Position].ToString();
             }
-            else { proposition_Player[index_Position] = 9; }
+            else { proposition_Player[index_Position] = 9; list_text[index_Position].text = proposition_Player[index_Position].ToString(); }
         }
 
         if(Verification_List_Player(right_Answer) == true)
@@ -104,8 +116,9 @@ public class Puzzle2 : PuzzleTemplate
             if(index_Position < 5)
             {
                 index_Position++;
+                index_UI.gameObject.transform.position = list_text[index_Position].gameObject.transform.position;
             }
-            else { index_Position = 0; }
+            else { index_Position = 0; index_UI.gameObject.transform.position = list_text[index_Position].gameObject.transform.position; }
         }
 
         if(bobole == false)      //Si bobole est égale à false : on déplace le curseur à gauche
@@ -113,8 +126,9 @@ public class Puzzle2 : PuzzleTemplate
             if(index_Position > 0)
             {
                 index_Position--;
+                index_UI.gameObject.transform.position = list_text[index_Position].gameObject.transform.position;
             }
-            else { index_Position = 5; }
+            else { index_Position = 5; index_UI.gameObject.transform.position = list_text[index_Position].gameObject.transform.position; }
         }
     }
 
