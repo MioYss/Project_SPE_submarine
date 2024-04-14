@@ -16,13 +16,18 @@ public class EventManager : Manager
         };
 
     [SerializeField]
-    private bool event_1, event_2;
+    private bool event_0, event_1, event_2;
 
+    //Event 0 :
+    public List<Light> list_Lights;
 
 
     void Start()
     {
-        
+        for (int i = 0; i < list_Lights.Count; i++)
+        {
+            list_Lights[i].GetComponent<Light>().enabled = false;
+        }
     }
 
 
@@ -31,8 +36,8 @@ public class EventManager : Manager
     {
         if (dictio_Puzzle_Done["Puzzle_1"] == true && event_1 == false)
         {
-            Debug.Log("Alerte Coupure d'o² ");
-            Lancement_Event_1();
+            Lancement_Event_0();    //rallumer la lumiere
+            Lancement_Event_1();    //cassage oxygène
             event_1 = true;
         }
         if (dictio_Puzzle_Done["Puzzle_2"] == true && dictio_Puzzle_Done["Puzzle_3"] == true && event_2 == false)
@@ -58,10 +63,16 @@ public class EventManager : Manager
         Debug.Log(dictio_Puzzle_Done[puzzle]);
     }
 
-
+    public void Lancement_Event_0()
+    {
+        for(int i = 0; i < list_Lights.Count; i++)
+        {
+            list_Lights[i].GetComponent<Light>().enabled = true;
+        }
+    }
     public void Lancement_Event_1()
     {
-        Debug.Log("bouuuuh l'oxygène est cassé");
+        Debug.Log("Alerte Coupure d'o² ");
     }
     public void Lancement_Event_2()
     {
