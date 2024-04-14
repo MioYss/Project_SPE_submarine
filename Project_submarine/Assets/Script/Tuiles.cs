@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Tuiles : MonoBehaviour
@@ -10,17 +10,9 @@ public class Tuiles : MonoBehaviour
     [SerializeField] private Puzzle5 puzzle_5_Object;
     [SerializeField] private int index_In_List;
 
-    private Vector3 vector_Rotation = Vector3.zero;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Vector3 vector_Rotation = Vector3.zero;
+
     public void tuile_Rotate()
     {
         if(index_Rotation == 3)
@@ -37,16 +29,16 @@ public class Tuiles : MonoBehaviour
             this.gameObject.transform.localRotation = Quaternion.Euler(vector_Rotation);
             puzzle_5_Object.update_List_All_Tuiles(index_In_List, array_Rotation[index_Rotation]);
         }
-
+        
     }
 
     public void random_Rotate()
     {
         Debug.Log("Je rotate");
-        index_Rotation = UnityEngine.Random.Range(0, 4);
-        vector_Rotation.z = array_Rotation[2];
+        index_Rotation = Random.Range(0, 4);
+        vector_Rotation.z = array_Rotation[index_Rotation];
         this.gameObject.transform.localRotation = Quaternion.Euler(vector_Rotation);
-        puzzle_5_Object.update_List_All_Tuiles(index_In_List, array_Rotation[2]);
+        puzzle_5_Object.update_List_All_Tuiles(index_In_List, array_Rotation[index_Rotation]);
     }
 }
 

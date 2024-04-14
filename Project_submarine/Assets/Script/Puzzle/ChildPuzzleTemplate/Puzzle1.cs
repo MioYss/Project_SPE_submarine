@@ -9,7 +9,6 @@ public class Puzzle1 : PuzzleTemplate
     [SerializeField]
     private bool[] array_Right_Answer;
     [SerializeField] private List<bool> list_Proposition;
-    [SerializeField] private List<TextMeshProUGUI> liste_Button_Text;
 
 
     void Start()
@@ -47,12 +46,10 @@ public class Puzzle1 : PuzzleTemplate
         if (list_Proposition[index] == true) 
         { 
             list_Proposition[index] = false;
-            liste_Button_Text[index].text = "0";
         } 
         else 
         { 
             list_Proposition[index] = true;
-            liste_Button_Text[index].text = "1";
         }
         Check_Up_Solution();
     }

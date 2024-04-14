@@ -68,7 +68,6 @@ public class Puzzle5 : PuzzleTemplate
         if(verif_List_Right_Answer() == true)
         {
             Debug.Log("Le codes est bon");
-            //pour enlever l'affichage du canvas
             valve.canvas_Puzzle_3.SetActive(false);
             valve.on_Valve = false;
 
