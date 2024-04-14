@@ -2306,8 +2306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2825b1e7c82f14e9e5d91a574e888e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  event_0: 0
   event_1: 0
   event_2: 0
+  list_Lights:
+  - {fileID: 578378284}
+  - {fileID: 539978672}
+  - {fileID: 1855859261}
 --- !u!1 &526973077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7632,7 +7637,7 @@ MonoBehaviour:
   puzzle_Done: 0
   array_Position_X: []
   index_Position: 0
-  right_Answer: 000000000500000007000000010000000400000002000000
+  right_Answer: 080000000700000005000000000000000600000008000000
   other_Answer_1: 
   proposition_Player: 000000000000000000000000000000000000000000000000
   console: {fileID: 1824337028}
