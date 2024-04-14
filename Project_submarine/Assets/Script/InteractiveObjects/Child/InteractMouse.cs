@@ -19,7 +19,7 @@ public class InteractMouse : Interactable
     {
         CancelMouse();
     }
-    private void CancelMouse()
+    public void CancelMouse()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
