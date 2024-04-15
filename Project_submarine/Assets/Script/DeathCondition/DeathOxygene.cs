@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DeathOxygene : MonoBehaviour
 {
@@ -57,6 +56,6 @@ public class DeathOxygene : MonoBehaviour
 
     public void OxygeneStop()
     {
-        StopCoroutine(OxygeneStart());
+        StopAllCoroutines();
     }
 }
