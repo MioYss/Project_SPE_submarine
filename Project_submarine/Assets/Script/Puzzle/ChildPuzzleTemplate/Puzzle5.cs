@@ -25,6 +25,7 @@ public class Puzzle5 : PuzzleTemplate
     //UI
     public List<TextMeshProUGUI> list_Text;
     public TextMeshProUGUI cursor_UI;
+    public TextMeshProUGUI text_Victoire;
 
     void Start()
     {
@@ -141,6 +142,7 @@ public class Puzzle5 : PuzzleTemplate
         {
             puzzle_Done = true;
             Debug.Log("Code Symbole bon");
+            text_Victoire.text = "Fermeture des trapes en cours";
             Set_Puzzle_Done();
         }
         if (Verification_List_Player() == false)

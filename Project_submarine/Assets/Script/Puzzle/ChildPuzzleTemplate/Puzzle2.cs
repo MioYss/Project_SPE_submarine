@@ -20,6 +20,7 @@ public class Puzzle2 : PuzzleTemplate
     //UI
     public List<TextMeshProUGUI> list_text;
     public TextMeshProUGUI index_UI;
+    public TextMeshProUGUI text_Victoire;
     void Start()
     {
         puzzle_Index = "Puzzle_2";
@@ -100,6 +101,7 @@ public class Puzzle2 : PuzzleTemplate
         if(Verification_List_Player(right_Answer) == true)
         {
             puzzle_Done = true;
+            text_Victoire.text = "C'est le bon code ! Replacez les pieces dans la machine a oxygène";
             Set_Puzzle_Done();
         }
         if(Verification_List_Player(right_Answer) == false)
