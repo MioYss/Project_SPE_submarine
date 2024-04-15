@@ -39,8 +39,8 @@ public class Rotation_Pick : MonoBehaviour
 
     private void Roll()
     {
-        lateral_rotation_object.z += Input.GetAxisRaw("Mouse ScrollWheel") * rotation_speed;
-        lateral_rotation_object.z = Mathf.Clamp(lateral_rotation_object.z, min_rot_angle_object, max_rot_angle_object);
+        lateral_rotation_object.y += Input.GetAxisRaw("Mouse ScrollWheel") * rotation_speed;
+        lateral_rotation_object.y = Mathf.Clamp(lateral_rotation_object.y, min_rot_angle_object, max_rot_angle_object);
 
         transform.localRotation = Quaternion.Euler(lateral_rotation_object);
     }
@@ -49,7 +49,7 @@ public class Rotation_Pick : MonoBehaviour
     {
         list_Return.Clear();
         list_Return.Add(lateral_rotation_object.x);
-        list_Return.Add(lateral_rotation_object.z);
+        list_Return.Add(lateral_rotation_object.y);
         //Debug.Log(list_Return[0]);
         //Debug.Log(list_Return[1]);
         return list_Return;

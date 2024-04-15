@@ -20,13 +20,13 @@ public class DeathOxygene : MonoBehaviour
     private IEnumerator OxygeneStart()
     {
         while (true) {
-            for(Oxygene_timer = 0; Oxygene_timer < 10; Oxygene_timer++)
+            for(Oxygene_timer = 0; Oxygene_timer < 180; Oxygene_timer++)
             {
                 // if(Check condition victoire puzzle) -> sortir du for
                 // else
                 Death_counter++;
                 Debug.Log("death++");
-                if (Death_counter == 10)
+                if (Death_counter == 180)
                 {
                     Death_counter = 0;
                     StartCoroutine(Respawn());
