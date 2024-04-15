@@ -22,9 +22,9 @@ public class Look : MonoBehaviour
     }
 
     private void Update(){
+        Debug.DrawLine(character_manager.Camera_transform.position, character_manager.Camera_transform.position+character_manager.Camera_transform.forward*ray_distance, Color.red);
         if(Physics.Raycast(character_manager.Camera_transform.position, character_manager.Camera_transform.forward, out var hit, ray_distance, layer_mask)){
             // executer le code
-            Debug.DrawLine(hit.point, hit.point + hit.normal.normalized, Color.red);
             Debug.Log(hit.transform.name);
 
             interact = hit.transform.GetComponent<Interactable>();
