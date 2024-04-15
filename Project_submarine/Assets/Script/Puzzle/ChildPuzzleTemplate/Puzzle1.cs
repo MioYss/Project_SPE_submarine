@@ -10,6 +10,7 @@ public class Puzzle1 : PuzzleTemplate
     private bool[] array_Right_Answer;
     [SerializeField] private List<bool> list_Proposition;
 
+    [SerializeField] public List<InteractButtonPuzzle1> list_Light;
 
     void Start()
     {
@@ -25,6 +26,10 @@ public class Puzzle1 : PuzzleTemplate
     //Va mettre la valeur booléenne de sa clé au dictionnaire à True avec la fonction
     public override void Set_Puzzle_Done()
     {
+        for(int  i = 0; i < list_Light.Count; i++)
+        {
+            list_Light[i].stop_Interact = true;
+        }
         Manager_Manager.GetManager<EventManager>().Changement_Dictionnaire_Puzzle(puzzle_Index, puzzle_Done);
         Debug.Log("Je change le dico attention !");
     }

@@ -9,29 +9,39 @@ public class InteractButtonPuzzle1 : Interactable
 
     public Light light_set;
     private bool canPush = true;
+    public bool stop_Interact = false;
 
     // Start is called before the first frame update
     void Start()
     {
         light_set.GetComponent<Light>().enabled = false;
     }
-
+    private void Update()
+    {
+        if(stop_Interact == true)
+        {
+            light_set.GetComponent <Light>().enabled = true;
+        }
+    }
     public override void Interact()
     {
-        game_Object_Puzzle_1.button_Clicked(index);
-        if (canPush)
+        if(stop_Interact == false )
         {
-            canPush = false;
-            StartCoroutine(Switch());
-            if (light_set.enabled == false)
+            game_Object_Puzzle_1.button_Clicked(index);
+            if (canPush)
             {
-                light_set.GetComponent<Light>().enabled = true;
+                canPush = false;
+                StartCoroutine(Switch());
+                if (light_set.enabled == false)
+                {
+                    light_set.GetComponent<Light>().enabled = true;
+                }
+                else
+                {
+                    light_set.GetComponent<Light>().enabled = false;
+                }
             }
-            else
-            {
-                light_set.GetComponent<Light>().enabled = false;
-            }
-        }
+        }          
     }
 
     private IEnumerator Switch()

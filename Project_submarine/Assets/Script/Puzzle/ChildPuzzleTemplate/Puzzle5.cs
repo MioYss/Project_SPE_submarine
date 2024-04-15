@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Puzzle5 : PuzzleTemplate
 {
@@ -10,6 +11,7 @@ public class Puzzle5 : PuzzleTemplate
     public List<int> list_Right_Answer;
     public int compteur_Right;
     public InteractValve valve;
+    public InteractWater water;
 
     //Variables code/symboles
     public InteractConsolePuzzle5 on_Console ;
@@ -71,7 +73,7 @@ public class Puzzle5 : PuzzleTemplate
             valve.canvas_Puzzle_3.SetActive(false);
             valve.on_Valve = false;
 
-            //manque juste a baisser le niveau de l'eau
+            water.Put_Water_Down();
         }
         else
         {

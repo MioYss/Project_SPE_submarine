@@ -9,10 +9,13 @@ public class InteractWater : Interactable
 
     private void Start()
     {
-        StartCoroutine(Water_Up());
     }
 
-    public override void Interact()
+    public void Put_Water_Down()
+    {
+        StartCoroutine(Water_Down());
+    }
+    /*public override void Interact()
     {
         if (level_water == 0) 
         {
@@ -22,7 +25,7 @@ public class InteractWater : Interactable
         {
             StartCoroutine(Water_Down());
         }
-    }
+    }*/
     private IEnumerator Water_Up()
     {
         while (true) 
@@ -54,16 +57,27 @@ public class InteractWater : Interactable
 
     private IEnumerator Water_Down()
     {
-        var newpos = water.transform.position + new Vector3(0, -0.1f, 0);
+        var newpos = water.transform.position + new Vector3(0, -10f, 0);
         while ((newpos - water.transform.position).magnitude > 0.01f)
         {
             water.transform.position = Vector3.Slerp(water.transform.position, newpos, 0.01f);
             yield return new WaitForEndOfFrame();
         }
         water.transform.position = newpos;
-        level_water--;
+        level_water = 0;
         level_water = Mathf.Clamp(level_water, 0, 6);
         //Debug.Log(level_water);
         yield return new WaitForEndOfFrame();
+    }
+
+    public void Water_Pop()
+    {
+        StartCoroutine(Water_Up());
+
+    }
+    public void Water_Stop()
+    {
+        StopCoroutine(Water_Up());
+        StopCoroutine(Water_Down());
     }
 }
