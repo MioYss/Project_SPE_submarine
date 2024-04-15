@@ -9,6 +9,8 @@ public class InteractValve : Interactable
 
     public InteractMouse interact_Mouse;
 
+    public GameObject fps_Controller;
+
     void Start()
     {
         canvas_Puzzle_3.gameObject.SetActive(false);
@@ -24,6 +26,7 @@ public class InteractValve : Interactable
         if (on_Valve == false)
         {
             on_Valve = true;
+            fps_Controller.GetComponent<Mouvement>().enabled = false;
             canvas_Puzzle_3.SetActive(true);
             interact_Mouse.Interact();
         }
@@ -35,6 +38,7 @@ public class InteractValve : Interactable
         {
             on_Valve = false;
             canvas_Puzzle_3.SetActive(false);
+            fps_Controller.GetComponent<Mouvement>().enabled = true;
         }
     }
 }

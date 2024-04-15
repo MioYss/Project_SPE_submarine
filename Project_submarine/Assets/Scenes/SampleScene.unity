@@ -2744,15 +2744,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ed0aa8c8b310bd34da668fb02608bf5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -135.66077
+      value: -85.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed0aa8c8b310bd34da668fb02608bf5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.241537
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed0aa8c8b310bd34da668fb02608bf5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 113.184555
+      value: 46.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ed0aa8c8b310bd34da668fb02608bf5e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7356,11 +7356,11 @@ PrefabInstance:
     - target: {fileID: -5548205106873017223, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ed28169628a7944aba89eb047a5386f, type: 2}
+      objectReference: {fileID: 2100000, guid: 6eb9983b948309848acdde27535440a1, type: 2}
     - target: {fileID: -4726332878105922657, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ed28169628a7944aba89eb047a5386f, type: 2}
+      objectReference: {fileID: 2100000, guid: 6eb9983b948309848acdde27535440a1, type: 2}
     - target: {fileID: -2575709417010024666, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -7368,7 +7368,7 @@ PrefabInstance:
     - target: {fileID: -825345427988507331, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ed28169628a7944aba89eb047a5386f, type: 2}
+      objectReference: {fileID: 2100000, guid: 6eb9983b948309848acdde27535440a1, type: 2}
     - target: {fileID: 919132149155446097, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Name
       value: Sink_FBX (1)
@@ -7380,7 +7380,7 @@ PrefabInstance:
     - target: {fileID: 7162868608640927053, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1ed28169628a7944aba89eb047a5386f, type: 2}
+      objectReference: {fileID: 2100000, guid: 6eb9983b948309848acdde27535440a1, type: 2}
     - target: {fileID: 8017990194906888948, guid: da6f8d60f89d470408866b691ed08eed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8981,6 +8981,7 @@ MonoBehaviour:
   on_Valve: 0
   canvas_Puzzle_3: {fileID: 1488113912}
   interact_Mouse: {fileID: 90291095}
+  fps_Controller: {fileID: 1797027695}
 --- !u!1 &1429146590
 GameObject:
   m_ObjectHideFlags: 0
@@ -9518,15 +9519,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 74caeb1121e4d2b46bd59c4486e9d8b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7448168
+      value: -27.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74caeb1121e4d2b46bd59c4486e9d8b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.241537
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74caeb1121e4d2b46bd59c4486e9d8b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 51.489197
+      value: 46.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74caeb1121e4d2b46bd59c4486e9d8b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11862,6 +11863,7 @@ MonoBehaviour:
   canvas_Puzzle_2: {fileID: 328499079}
   camera_Main: {fileID: 963194227}
   camera_Focus_Console: {fileID: 164305585}
+  fps_Controller: {fileID: 1797027695}
 --- !u!65 &1824337029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12593,6 +12595,7 @@ MonoBehaviour:
   canvas_Puzzle_5: {fileID: 575051993}
   camera_Main: {fileID: 963194227}
   camera_Focus_Console: {fileID: 1343169570}
+  fps_Controller: {fileID: 1797027695}
 --- !u!1 &1935742653
 GameObject:
   m_ObjectHideFlags: 0

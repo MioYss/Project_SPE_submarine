@@ -10,6 +10,7 @@ public class InteractiveConsolePuzzle2 : Interactable
 
     public Camera camera_Main;
     public Camera camera_Focus_Console;
+    public GameObject fps_Controller;
 
     void Start()
     {
@@ -27,13 +28,16 @@ public class InteractiveConsolePuzzle2 : Interactable
             camera_Focus_Console.GetComponent<Camera>().enabled = true;
             camera_Main.GetComponent<Camera>().enabled = false;
 
+            fps_Controller.GetComponent<Mouvement>().enabled = false;
+
         }
         else
         {
             on_Console = false;
             canvas_Puzzle_2.gameObject.SetActive(false);
-            camera_Focus_Console.enabled = false;
-            camera_Main.enabled = true;
+            camera_Focus_Console.GetComponent<Camera>().enabled = false;
+            camera_Main.GetComponent<Camera>().enabled = true;
+            fps_Controller.GetComponent<Mouvement>().enabled = true;
 
         }
     }
